@@ -1,4 +1,4 @@
-<header class="bg-white shadow-md py-4">
+const e=`<header class="bg-white shadow-md py-4">
   <div class="container mx-auto flex justify-between items-center px-6">
     <h1 class="text-2xl font-bold">Viktoriya & Sergey</h1>
     <nav>
@@ -11,3 +11,4 @@
     </nav>
   </div>
 </header>
+`;export{e as default};
