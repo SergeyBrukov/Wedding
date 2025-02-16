@@ -5,5 +5,5 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  base: '/wedding/',
+  base: 'https://github.com/SergeyBrukov/wedding',
 })
