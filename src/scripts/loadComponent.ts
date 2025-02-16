@@ -10,7 +10,7 @@ async function loadComponent(id: string, file: string) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadComponent('header', '/Wedding/src/components/header.html');
-  loadComponent('gallery', '/Wedding/src/components/gallery.html');
-  loadComponent('footer', '/Wedding/src/components/footer.html');
+  loadComponent('header', '/src/components/header.html');
+  loadComponent('gallery', '/src/components/gallery.html');
+  loadComponent('footer', '/src/components/footer.html');
 });
