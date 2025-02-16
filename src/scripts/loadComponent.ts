@@ -1,4 +1,4 @@
-async function loadComponent(id, file) {
+async function loadComponent(id: string, file: string) {
   try {
     const response = await fetch(file)
     const text = await response.text()
