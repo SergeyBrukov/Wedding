@@ -1,0 +1,18 @@
+{
+  "default": [
+    "Home",
+    "About",
+    "Schedule",
+    "Contact"
+  ],
+  "home": [
+    "Home",
+    "About",
+    "Schedule",
+    "Contact"
+  ],
+  "about": [
+    "Home",
+    "History"
+  ]
+}
