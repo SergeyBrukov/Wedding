@@ -25,7 +25,7 @@ const HeaderNavigationBlock = () => {
   return (
     <nav>
       <ul className="flex space-x-6">
-        {navItems.map((item, index) => {
+        {navItems.map((item) => {
           const isHome = item.includes("Home");
           return (
             <li key={item} className="animate-slide-in opacity-0 animation-delay-[200ms]">

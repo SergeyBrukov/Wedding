@@ -1,5 +1,6 @@
 import { memo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const GalleryPage = () => {
   return (
@@ -17,8 +18,10 @@ const GalleryPage = () => {
         </Link>
 
         <Link href="/gallery/wedding-photos" className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-          <img
+          <Image
             src="/images/wedding-photos.jpg"
+            layout="fill"
+            objectFit="cover"
             alt="Весільні фото"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />

@@ -2,7 +2,7 @@ import React, { memo, use } from "react";
 import SwiperGallery from "@/components/section/gallery/SwiperGallery";
 import Link from "next/link";
 
-const Gallery = ({ filesPromise }: { filesPromise: Promise<any> }) => {
+const Gallery = ({ filesPromise }: { filesPromise: Promise<unknown> }) => {
   const data = use(filesPromise);
 
   console.log("Gallery data", data);

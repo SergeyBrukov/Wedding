@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import galleryService from "@/service/Gallery.service";
 import "yet-another-react-lightbox/styles.css";
 import GalleryImagesBlock from "@/components/pages/gallery/GalleryImagesBlock";

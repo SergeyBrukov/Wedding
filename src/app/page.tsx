@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import About from "@/components/section/about/About";
-import MainSection from "@/components/section/main/MainSection";
 import Gallery from "@/components/section/gallery/Gallery";
 import Schedule from "@/components/section/schedule/Schedule";
 import Contact from "@/components/section/contact/Contact";
