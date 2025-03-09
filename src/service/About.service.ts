@@ -13,9 +13,10 @@ class AboutService {
             revalidate: 10,
           }
         });
+        console.log("response>>", response);
+
         const data = await response.json();
 
-        console.log("data>>", data);
 
         if (slug) {
           if (slug.toString().includes("-")) {
