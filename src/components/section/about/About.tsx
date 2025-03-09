@@ -25,7 +25,6 @@ const readMoreGenerateBlock = (text: string, href: string) => {
 const About = async () => {
 
   const aboutData = await getAboutOurStory();
-  console.log("aboutData>>", aboutData);
 
   const { firstMeeting, proposal } = aboutData;
 

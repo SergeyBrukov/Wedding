@@ -15,7 +15,7 @@ const GalleryImagesBlock = ({ files }) => {
 
   return (
     <>
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-4 max-w-6xl">
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-4 w-full">
         {files.map(({ src, id }, i) => (
           <div key={id} className="relative w-full h-60">
             <Image

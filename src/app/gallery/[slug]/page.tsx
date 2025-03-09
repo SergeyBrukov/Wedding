@@ -12,9 +12,8 @@ const GalleryDetailPage = async () => {
     src: `https://lh3.googleusercontent.com/d/${file.id}`,
   }));
 
-
   return (
-    <section className="py-16 bg-mochaMousse-100 min-h-screen flex flex-col items-center">
+    <section className="p-16 bg-mochaMousse-100 min-h-screen flex flex-col items-center">
       <GalleryImagesBlock files={files} />
     </section>
   );

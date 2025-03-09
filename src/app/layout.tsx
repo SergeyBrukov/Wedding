@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import MainSection from "@/components/section/main/MainSection";
 import React from "react";
+import ScrollPage from "@/app/scrollPage/ScrollPage";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
     <body
       className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
     >
+    <ScrollPage />
     <Header />
     <main className="flex-1">
       <MainSection />
