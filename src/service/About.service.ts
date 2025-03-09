@@ -1,6 +1,7 @@
 class AboutService {
   API_METHODS = {
     async getAbout(slug?: string) {
+      console.log("process.env.NEXT_PUBLIC_API_URL>>", process.env.NEXT_PUBLIC_API_URL);
       try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/about-section`, {
           method: "GET",
@@ -26,6 +27,7 @@ class AboutService {
 
         return data;
       } catch (error) {
+        console.error("Error in AboutService -> getAbout:", error);
         return error;
       }
     },
