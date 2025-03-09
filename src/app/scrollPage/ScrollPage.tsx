@@ -1,11 +1,14 @@
 "use client";
-import { memo, useLayoutEffect } from "react";
+import { memo, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const ScrollPage = () => {
   const pathname = usePathname();
-  useLayoutEffect(() => {
-    window.scroll(0, 0);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
   }, [pathname]);
   return <></>;
 }

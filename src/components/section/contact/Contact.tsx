@@ -29,7 +29,8 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
         >
-          Email: <span className="text-babyPink-500">wedding@example.com</span>
+          Email: {" "}
+          <a href="mailto:sdiomant@gmail.com" className="text-babyPink-500 underline">sdiomant@gmail.com</a>
         </motion.p>
       </div>
     </section>

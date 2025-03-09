@@ -7,8 +7,11 @@ const GalleryPage = () => {
     <section className="py-16 bg-mochaMousse-100 min-h-screen flex flex-col items-center justify-center">
       <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
         <Link href="/gallery/our-photos" className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
-          <img
+          <Image
             src="/images/our-photos.jpg"
+            width={500}
+            height={300}
+            objectFit="cover"
             alt="Наші фото"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
@@ -20,7 +23,8 @@ const GalleryPage = () => {
         <Link href="/gallery/wedding-photos" className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
           <Image
             src="/images/wedding-photos.jpg"
-            layout="fill"
+            width={500}
+            height={300}
             objectFit="cover"
             alt="Весільні фото"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
