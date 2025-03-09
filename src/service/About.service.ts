@@ -15,6 +15,8 @@ class AboutService {
         });
         const data = await response.json();
 
+        console.log("data>>", data);
+
         if (slug) {
           if (slug.toString().includes("-")) {
             const parseSlug = slug.toString().split("-");
@@ -27,7 +29,7 @@ class AboutService {
 
         return data;
       } catch (error) {
-        console.error("Error in AboutService -> getAbout:", error);
+        console.log("Error in AboutService -> getAbout:", error);
         return error;
       }
     },
