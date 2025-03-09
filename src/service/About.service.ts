@@ -1,6 +1,6 @@
 class AboutService {
   API_METHODS = {
-    async getAbout(slug: string) {
+    async getAbout(slug?: string) {
       try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/about-section`, {
           method: "GET",
