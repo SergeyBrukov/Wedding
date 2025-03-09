@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import About from "@/components/section/about/About";
 import Gallery from "@/components/section/gallery/Gallery";
 import Schedule from "@/components/section/schedule/Schedule";
 import Contact from "@/components/section/contact/Contact";
@@ -10,6 +11,7 @@ export default  function Home() {
   return (
     <div>
 
+      <About />
 
       {/* Галерея */}
       <Suspense fallback={<p className="text-red-500 py-16 bg-mochaMousse-100">Gallery loading....</p>}>
