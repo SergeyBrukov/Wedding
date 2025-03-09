@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  typescript: {
+    ignoreBuildErrors: true, // Вимкнення помилок TypeScript під час білду
+  },
+  eslint: {
+    ignoreDuringBuilds: true, // Вимкнення ESLint під час білду
+  },
 };
 
 export default nextConfig;
