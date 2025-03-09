@@ -4,9 +4,18 @@ import Gallery from "@/components/section/gallery/Gallery";
 import Schedule from "@/components/section/schedule/Schedule";
 import Contact from "@/components/section/contact/Contact";
 import galleryService from "@/service/Gallery.service";
+import aboutService from "@/service/About.service";
 
-export default function Home() {
+const getAboutOurStory = async () => {
+  const data = await aboutService.API_METHODS.getAbout();
+  return data;
+};
+
+export default async function Home() {
   const FOLDER_ID = "1MOJtgldHMpqkObPqvqNU6OTDWLP5pALK";
+  const aboutData = await getAboutOurStory();
+
+  console.log("aboutData>>SKA", aboutData);
 
   return (
     <div>
