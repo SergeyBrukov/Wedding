@@ -13,7 +13,7 @@ const getAboutOurStory = async () => {
 
 export default async function Home() {
   const FOLDER_ID = "1MOJtgldHMpqkObPqvqNU6OTDWLP5pALK";
-  const aboutData = await getAboutOurStory();
+  const aboutData = await fetch('https://wedding-git-main-sergeybrukovs-projects.vercel.app/api/about-section')
 
   console.log("aboutData>>SKA", aboutData);
 
