@@ -1,8 +1,9 @@
 "use client";
 import { memo, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const ScrollPage = () => {
+  const router = useRouter();
   const pathname = usePathname();
   const sectionIds = ["about", "schedule", "gallery", "contact"];
 
@@ -12,6 +13,7 @@ const ScrollPage = () => {
     }
 
     const handleScroll = () => {
+      console.log("Scroll to top");
       window.scrollTo({
         top: 0,
         behavior: "instant",
@@ -23,15 +25,26 @@ const ScrollPage = () => {
   }, [pathname]);
 
   useEffect(() => {
+    const examinationAnchorSection = (targetSectionId: string) => {
+      const anchor = window.location.hash.split("#")[1];
+      console.log("Examination anchor section", targetSectionId, anchor);
+
+      if (anchor === targetSectionId) {
+        router.replace(pathname, { scroll: false });
+      }
+    };
+
     const intersectionObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         const target = entry.target as HTMLElement;
+
         if (!sectionIds.includes(target.id)) return;
 
         if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
           target.classList.add("animate-opacity-in", "opacity-1");
           target.classList.remove("opacity-0");
-          observer.unobserve(target);
+          examinationAnchorSection(target.id);
+          // observer.unobserve(target);
         }
       });
     }, { threshold: [0, 0.3, 0.5, 0.7, 1] });
@@ -51,9 +64,6 @@ const ScrollPage = () => {
   }, [pathname]);
 
   useEffect(() => {
-    if (pathname === "/") {
-      return;
-    }
     const anchor = window.location.hash.split("#")[1];
     if (anchor) {
       const element = document.getElementById(anchor);
