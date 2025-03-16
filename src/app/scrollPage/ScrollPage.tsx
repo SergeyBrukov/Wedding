@@ -8,7 +8,7 @@ const ScrollPage = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
-      // window.history.scrollRestoration = "manual";
+      window.history.scrollRestoration = "manual";
     }
 
     const handleScroll = () => {
@@ -51,13 +51,16 @@ const ScrollPage = () => {
   }, [pathname]);
 
   useEffect(() => {
-    // const anchor = window.location.hash.split("#")[1];
-    // if (anchor) {
-    //   const element = document.getElementById(anchor);
-    //   if (element) {
-    //     element.scrollIntoView({ behavior: "smooth", block: "start" });
-    //   }
-    // }
+    if (pathname === "/") {
+      return;
+    }
+    const anchor = window.location.hash.split("#")[1];
+    if (anchor) {
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
   }, [pathname]);
 
   return null;
