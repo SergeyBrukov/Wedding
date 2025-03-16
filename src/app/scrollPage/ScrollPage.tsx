@@ -49,7 +49,7 @@ const ScrollPage = () => {
         intersectionObserver.unobserve(section);
       });
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 };
