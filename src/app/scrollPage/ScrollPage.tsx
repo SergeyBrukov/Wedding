@@ -20,7 +20,7 @@ const ScrollPage = () => {
         if (!sectionIds.some(item => item === target.id)) {
           return;
         }
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
           console.log("Intersecting", entry.target);
           target.classList.add("animate-opacity-in");
           target.classList.remove("opacity-0");
@@ -29,7 +29,7 @@ const ScrollPage = () => {
         }
       });
     }, {
-      threshold: [0, 0.5, 1],
+      threshold: [0, 0.2, 0.3, 0.5, 1],
     });
 
 
@@ -46,10 +46,10 @@ const ScrollPage = () => {
           intersectionObserver.observe(section);
         }
       });
-    }
+    };
   }, [pathname]);
 
   return <></>;
-}
+};
 
 export default memo(ScrollPage);
