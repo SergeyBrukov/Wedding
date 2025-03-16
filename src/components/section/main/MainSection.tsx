@@ -18,13 +18,20 @@ const MainSection = () => {
       </div>
 
       <div
-        className="relative text-center text-white z-10 duration-1000 animate-fade-up"
+        className="relative text-center text-white z-10"
       >
-        <h1 className="text-5xl font-bold">Наш Особливий День</h1>
-        <p className="mt-4 text-lg">Долучайтесь до святкування нашого кохання</p>
+        <h1
+          className="text-4xl md:text-6xl md:leading-[1.5] font-bold font-greatVibes overflow-hidden animate-typing whitespace-nowrap letter-spacing-wide">Наш
+          Особливий День</h1>
+        <p
+          className="mt-4 text-2xl md:text-4xl font-greatVibes overflow-hidden whitespace-nowrap letter-spacing-wide animate-typing"
+          style={{ width: 0, animationDelay: "1.5s" }}
+        >
+          Долучайтесь до святкування нашого кохання
+        </p>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default memo(MainSection);

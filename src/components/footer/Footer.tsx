@@ -2,11 +2,9 @@ import React, { memo } from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-mochaMousse-700 text-babyPink-100 p-8">
+    <footer className="bg-gradient-to-r from-white to-ivory p-8 text-black">
       <div className="max-w-7xl mx-auto flex justify-between items-center max-lg:flex-col max-lg:gap-2">
-        <div className="animate-fade-up">
-          <p className="text-lg font-semibold">Wedding Day © 2025</p>
-        </div>
+        <p className="text-lg font-greatVibes animate-fade-up">Wedding Day © 2025</p>
 
         <div
           className="flex space-x-6"

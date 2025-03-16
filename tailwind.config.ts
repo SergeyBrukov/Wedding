@@ -2,8 +2,8 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -13,6 +13,8 @@ export default {
         "fade-up": "fadeUp 1s ease-out",
         "slide-in": "slideIn 1s ease-out forwards",
         "opacity-in": "opacityIn 1s ease-out forwards",
+        "typing": "typing 1.5s steps(40, end) forwards",
+        "blink-caret": "blink-caret 0.75s step-end infinite",
       },
       keyframes: {
         fadeDown: {
@@ -28,71 +30,41 @@ export default {
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
         opacityIn: {
-          '0%': { opacity: "0", transform: 'translateY(3rem)' },
-          '100%': { opacity: "1", transform: 'translateY(0)' },
+          "0%": { opacity: "0", transform: "translateY(3rem)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        typing: {
+          "0%": { width: "0" },
+          "100%": { width: "100%" },
+        },
+        "blink-caret": {
+          "0%, 100%": { borderColor: "transparent" },
+          "50%": { borderColor: "orange" },
         },
       },
       colors: {
-        mochaMousse: {
-          50: "#f5f2f1",
-          100: "#e6e0de",
-          200: "#cdc1bd",
-          300: "#b3a19b",
-          400: "#998279",
-          500: "#7f6257",
-          600: "#664f46",
-          700: "#4c3b34",
-          800: "#332822",
-          900: "#191411",
-        },
-        babyPink: {
-          50: "#fef6f9",
-          100: "#fdeef3",
-          200: "#fbd5e1",
-          300: "#f8bcd0",
-          400: "#f4a3be",
-          500: "#f18aac",
-          600: "#ee719a",
-          700: "#ea5888",
-          800: "#e73f76",
-          900: "#e32664",
-        },
-        matchaGreen: {
-          50: "#f5f9f2",
-          100: "#eaf2e0",
-          200: "#d4e4c1",
-          300: "#bdd7a1",
-          400: "#a7c981",
-          500: "#91bc62",
-          600: "#7aa04e",
-          700: "#62833e",
-          800: "#4a662f",
-          900: "#32491f",
-        },
-        cardinalRed: {
-          50: "#fdf2f2",
-          100: "#fbe5e5",
-          200: "#f6bfbf",
-          300: "#f09a9a",
-          400: "#eb7474",
-          500: "#e54f4f",
-          600: "#bf3f3f",
-          700: "#992f2f",
-          800: "#731f1f",
-          900: "#4d1010",
-        },
-        plumPurple: {
-          50: "#f8f3f7",
-          100: "#f1e6ef",
-          200: "#e0c1d7",
-          300: "#cf9bbf",
-          400: "#be76a7",
-          500: "#ad518f",
-          600: "#8b4172",
-          700: "#693155",
-          800: "#472038",
-          900: "#24101c",
-        },
+        // Основні кольори
+        white: "#FFFFFF",      // Білий
+        milk: "#fef6e4",       // Молочний
+        cream: "#f7e8d1",      // Кремовий
+        ivory: "#f5f5f0",      // Слонова кістка
+        paleRose: "#f9e1e6",   // Блідо-рожевий
+        lightBeige: "#f1e4d2", // Світло-бежевий
+        warmGray: "#d1d1d1",   // Теплий сірий
+        paleYellow: "#fff9d1", // Блідо-жовтий
+        silverWhite: "#f5f5f5", // Білий зі сріблястим відтінком
+        warmCream: "#f6e4b8",  // Теплий кремовий
+
+        // Другорядні кольори
+        success: "#4CAF50", // Зелений для успіху
+        error: "#F44336",   // Червоний для помилок
+        warning: "#FF9800", // Оранжевий для попереджень
+      },
+
+      // FONTS
+      fontFamily: {
+        greatVibes: ["var(--font-great-vibes)"],
+        avenir: ["var(--font-avenir)"],
       },
     },
   },

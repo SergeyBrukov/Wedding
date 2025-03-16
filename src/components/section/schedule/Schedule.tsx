@@ -1,39 +1,48 @@
-"use client"
-import { motion } from "framer-motion";
 import React, { memo } from "react";
 
 const Schedule = () => {
   return (
-    <section id="schedule" className="py-16 bg-mochaMousse-50">
+    <section id="schedule" className="opacity-0 py-16 bg-gradient-to-r from-white to-ivory">
       <div className="max-w-7xl mx-auto text-center px-6">
-        <motion.h2
-          className="text-4xl font-bold text-babyPink-500"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
+        <h2 className="text-5xl font-greatVibes text-black animate-opacity-in">
           Розклад
-        </motion.h2>
-        <motion.ul
-          className="mt-6 text-lg text-mochaMousse-700"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          <li className="my-4">
-            <span className="font-semibold">14:00</span> - Церемонія
-          </li>
-          <li className="my-4">
-            <span className="font-semibold">16:00</span> - Фотосесія
-          </li>
-          <li className="my-4">
-            <span className="font-semibold">18:00</span> - Святковий банкет
-          </li>
-          {/* Можна додати більше подій */}
-        </motion.ul>
+        </h2>
+        <div className="mt-6 text-lg text-black flex flex-col items-center gap-[25px] animate-opacity-in">
+          <div className="flex flex-col items-center gap-[5px] animate-fade-up">
+            <p className="font-greatVibes text-3xl">
+              Збір гостей
+            </p>
+            <span>
+              14:00
+            </span>
+            <span className="block max-w-[200px]">
+              ресторанно-готельний
+              комплекс "Шале"
+              Бердичівське шосе, 10
+            </span>
+          </div>
+
+          <div className="flex flex-col items-center gap-[5px] animate-fade-up">
+            <p className="font-greatVibes text-3xl">
+              Церемонія одруження
+            </p>
+            <span>
+              15:00
+            </span>
+          </div>
+
+          <div className="flex flex-col items-center gap-[5px] animate-fade-up">
+            <p className="font-greatVibes text-3xl">
+              Святковий банкет
+            </p>
+            <span>
+              16:00
+            </span>
+          </div>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default memo(Schedule);

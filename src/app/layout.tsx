@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Dancing_Script, Geist, Geist_Mono, Urbanist, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME } from "@/constants/seo.constants";
 import Header from "@/components/header/Header";
@@ -11,16 +11,15 @@ import "swiper/css/pagination";
 import MainSection from "@/components/section/main/MainSection";
 import React from "react";
 import ScrollPage from "@/app/scrollPage/ScrollPage";
+// import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const shelleyScript = localFont({
+//   src: "./fonts/Shelley-AndanteScript.ttf",
+//   display: "swap",
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const greatVibes = Great_Vibes({ subsets: ["latin"], weight: ["400"], variable: "--font-great-vibes" });
+const avenir = Urbanist({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-avenir" });
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+      className={`${avenir.className} ${greatVibes.className} antialiased flex flex-col min-h-screen`}
     >
     <ScrollPage />
     <Header />

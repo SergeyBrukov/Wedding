@@ -14,9 +14,10 @@ export default  function Home() {
       <About />
 
       {/* Галерея */}
-      <Suspense fallback={<p className="text-red-500 py-16 bg-mochaMousse-100">Gallery loading....</p>}>
+      // TODO На подумати функціонал обзьорвебла
+      {/*<Suspense fallback={<p className="text-red-500 py-16 bg-mochaMousse-100">Gallery loading....</p>}>*/}
         <Gallery filesPromise={galleryService.API_METHODS.getPhotos(FOLDER_ID)} />
-      </Suspense>
+      {/*</Suspense>*/}
 
       {/* Розклад */}
       <Schedule />
