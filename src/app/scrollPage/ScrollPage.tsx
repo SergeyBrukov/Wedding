@@ -1,11 +1,9 @@
 "use client";
 import { memo, useEffect } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const ScrollPage = () => {
   const pathname = usePathname();
-  const router = useRouter();
-  const searchParams = useSearchParams();
   const sectionIds = ["about", "schedule", "gallery", "contact"];
 
   useEffect(() => {
@@ -31,7 +29,6 @@ const ScrollPage = () => {
         if (!sectionIds.includes(target.id)) return;
 
         if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
-          console.log("Intersecting", entry.target);
           target.classList.add("animate-opacity-in", "opacity-1");
           target.classList.remove("opacity-0");
           observer.unobserve(target);
