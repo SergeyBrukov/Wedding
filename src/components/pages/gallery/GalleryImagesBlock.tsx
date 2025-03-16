@@ -20,6 +20,7 @@ const GalleryImagesBlock = ({ files }) => {
           <div key={id} className="relative w-full h-60">
             <Image
               src={src}
+              loading="lazy"
               alt="Gallery Image"
               layout="fill"
               objectFit="cover"

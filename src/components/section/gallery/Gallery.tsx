@@ -5,8 +5,6 @@ import Link from "next/link";
 const Gallery = ({ filesPromise }: { filesPromise: Promise<unknown> }) => {
   const data = use(filesPromise);
 
-  console.log("Gallery data", data);
-
   const files = data.files.map((file) => ({
     id: file.id,
     src: `https://lh3.googleusercontent.com/d/${file.id}`,

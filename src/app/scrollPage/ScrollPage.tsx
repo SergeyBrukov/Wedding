@@ -1,9 +1,8 @@
 "use client";
-import { memo, useEffect } from "react";
+import { memo, useEffect, useLayoutEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 const ScrollPage = () => {
-  const router = useRouter();
   const pathname = usePathname();
   const sectionIds = ["about", "schedule", "gallery", "contact"];
 
@@ -25,15 +24,12 @@ const ScrollPage = () => {
   }, [pathname]);
 
   useEffect(() => {
-    const examinationAnchorSection = (targetSectionId: string) => {
-      const anchor = window.location.hash.split("#")[1];
-      console.log("Examination anchor section", targetSectionId, anchor);
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
 
-      if (anchor === targetSectionId) {
-        router.replace(pathname, { scroll: false });
-      }
-    };
-
+  useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         const target = entry.target as HTMLElement;
@@ -43,8 +39,7 @@ const ScrollPage = () => {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
           target.classList.add("animate-opacity-in", "opacity-1");
           target.classList.remove("opacity-0");
-          examinationAnchorSection(target.id);
-          // observer.unobserve(target);
+          observer.unobserve(target);
         }
       });
     }, { threshold: [0, 0.3, 0.5, 0.7, 1] });
