@@ -5,7 +5,12 @@ class GalleryService {
 
     async getPhotos(FOLDER_ID: string) {
       try {
-        const response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents AND (mimeType='image/jpeg' OR mimeType='image/png' OR mimeType='image/webp')&key=${this.API_KEY_GOOGLE_DRIVE}`);
+        const response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents AND (mimeType='image/jpeg' OR mimeType='image/png' OR mimeType='image/webp' OR mimeType='image/heic' OR mimeType='image/heif')&key=${this.API_KEY_GOOGLE_DRIVE}`, {
+          cache: "force-cache",
+          next: {
+            revalidate: 10,
+          }
+        });
         return await response.json();
       } catch (error) {
         return error;
