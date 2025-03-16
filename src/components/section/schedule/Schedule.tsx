@@ -10,7 +10,7 @@ const Schedule = () => {
         </h2>
         <div className="mt-6 text-lg text-black flex flex-col items-center gap-12 animate-opacity-in">
           {/* Збір гостей */}
-          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-[120px] animate-fade-up">
+          <div className="flex flex-col-reverse md:flex-row items-center gap-3 md:gap-[120px] animate-fade-up">
             <div className="flex flex-col gap-3">
               <p className="font-greatVibes text-4xl">Збір гостей</p>
               <span className="text-xl font-semibold">14:00</span>
@@ -24,7 +24,7 @@ const Schedule = () => {
           </div>
 
           {/* Церемонія одруження */}
-          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-[120px] animate-fade-up">
+          <div className="flex flex-col-reverse md:flex-row items-center gap-3 md:gap-[120px] animate-fade-up">
             <div className="flex flex-col gap-3">
               <p className="font-greatVibes text-4xl">Церемонія одруження</p>
               <span className="text-xl font-semibold">15:00</span>
@@ -34,7 +34,7 @@ const Schedule = () => {
           </div>
 
           {/* Святковий банкет */}
-          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-[120px] animate-fade-up">
+          <div className="flex flex-col-reverse md:flex-row items-center gap-3 md:gap-[120px] animate-fade-up">
             <div className="flex flex-col gap-3">
               <p className="font-greatVibes text-4xl">Святковий банкет</p>
               <span className="text-xl font-semibold">16:00</span>
