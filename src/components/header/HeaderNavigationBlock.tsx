@@ -7,12 +7,12 @@ import headerService from "@/service/Header.service";
 const HeaderNavigationBlock = () => {
   const pathName = usePathname();
   const [navItems, setNavItems] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     (async () => {
       try {
         const data = await headerService.API_METHODS.navigationBlock.getNavigationBlock();
-
         setNavItems(data.navItems || []);
       } catch (error) {
         console.error("Помилка завантаження меню:", error);
@@ -20,22 +20,40 @@ const HeaderNavigationBlock = () => {
     })();
   }, [pathName]);
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      console.log("Click outside", event.target);
+      if (isMenuOpen && !event.target.closest("#navbar-toggle")) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    }
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
   return (
     <nav>
+      {/* Кнопка для мобільного меню */}
       <button
+        id="navbar-toggle"
         onClick={toggleMenu}
-        className={`inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 ${isMenuOpen ? "bg-gray-100 dark:bg-gray-700" : ""}`}
+        className={`inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-warmGray rounded-lg md:hidden transition-colors duration-300 ${
+          isMenuOpen ? "bg-ivory" : "bg-transparent"
+        }`}
         aria-controls="navbar-default"
         aria-expanded={isMenuOpen ? "true" : "false"}
       >
         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
           <path
-            stroke="#ffffff"
+            stroke={isMenuOpen ? "black" : "#ffffff"}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
@@ -44,14 +62,19 @@ const HeaderNavigationBlock = () => {
         </svg>
       </button>
 
-      {/* Для мобільної версії */}
+      {/* Мобільне меню */}
       <div className={`w-max md:hidden ${isMenuOpen ? "block absolute mt-1 z-[1000] right-1" : "hidden"}`} id="navbar-default">
-        <ul className="font-medium flex flex-col p-4 md:p-0 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <ul className="font-medium flex flex-col p-4 md:p-0 border border-lightBeige rounded-lg bg-ivory md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent">
           {navItems.map((item) => {
             const isHome = item.includes("Home");
             return (
               <li key={item}>
-                <Link onClick={toggleMenu} replace href={isHome ? "/" : `#${item.toLowerCase()}`} className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                <Link
+                  onClick={toggleMenu}
+                  replace
+                  href={isHome ? "/" : `#${item.toLowerCase()}`}
+                  className="block py-2 px-3 text-black rounded-sm hover:bg-paleRose transition-colors duration-300"
+                >
                   {item}
                 </Link>
               </li>
@@ -60,13 +83,17 @@ const HeaderNavigationBlock = () => {
         </ul>
       </div>
 
-      {/* Для десктопної версії */}
-      <ul className="flex space-x-6 md:flex hidden">
+      {/* Десктопне меню */}
+      <ul className="hidden md:flex space-x-6">
         {navItems.map((item) => {
           const isHome = item.includes("Home");
           return (
             <li key={item} className="animate-slide-in opacity-0 animation-delay-[200ms]">
-              <Link replace href={isHome ? "/" : `#${item.toLowerCase()}`} className="hover:text-babyPink-300">
+              <Link
+                replace
+                href={isHome ? "/" : `#${item.toLowerCase()}`}
+                className="hover:text-cream transition-colors duration-300"
+              >
                 {item}
               </Link>
             </li>

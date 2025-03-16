@@ -1,9 +1,11 @@
 "use client";
 import { memo, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const ScrollPage = () => {
   const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const sectionIds = ["about", "schedule", "gallery", "contact"];
 
   useEffect(() => {
@@ -49,6 +51,16 @@ const ScrollPage = () => {
         intersectionObserver.unobserve(section);
       });
     };
+  }, [pathname]);
+
+  useEffect(() => {
+    const anchor = window.location.hash.split("#")[1];
+    if (anchor) {
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
   }, [pathname]);
 
   return null;
