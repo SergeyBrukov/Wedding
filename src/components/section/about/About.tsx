@@ -42,18 +42,13 @@ const About = async () => {
           Ми дуже раді запросити вас на наше весілля. Це буде найкращий день
           у нашому житті, і ми хочемо поділитися цим щастям з вами.
         </p>
-        <p
-          className="mt-6 text-lg text-black opacity-0 translate-y-12 transition-opacity duration-1000 delay-1400 animate-opacity-in translate-y-0"
-        >
-          Ми веселімося, танцюємо і святкуємо, і хочемо, щоб ви були з нами.
-        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="mt-8 p-4">
             <h3
               className="text-4xl font-bold text-black opacity-0 translate-y-12 transition-opacity animate-opacity-in duration-4000 delay-2000"
             >
-              Перша зустріч
+              Як ми познайомились
             </h3>
             <p
               className="mt-6 text-lg text-black opacity-0 translate-y-12 transition-opacity duration-1000 delay-1400 animate-opacity-in translate-y-0">{firstMeeting.date}</p>

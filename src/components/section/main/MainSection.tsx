@@ -5,10 +5,9 @@ const MainSection = () => {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center">
-      {/* Саме зображення */}
       <div className="absolute inset-0">
         <Image
-          src="https://caratsandcake.com/_images/webcache3/wedding-websites-16-200849-1651878815_-_abcdef_-_bc85a4aba29748842f4d26ef5e55ba488aed0871.webp"
+          src="/images/main-bg.jpg"
           alt="Весільне фото"
           layout="fill"
           objectFit="cover"
