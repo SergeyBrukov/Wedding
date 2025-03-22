@@ -19,7 +19,7 @@ const ScrollPage = () => {
       });
     };
 
-    // handleScroll();
+    handleScroll();
 
   }, [pathname]);
 
