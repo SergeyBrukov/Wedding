@@ -7,20 +7,23 @@ import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 
 type TSwiperGalleryProps = {
-  files: { id: string; src: string }[];
+  files: { id: string | number; src: string }[];
+  direction?: "vertical" | "horizontal";
+  className?: string;
 };
 
-const SwiperGallery: FC<TSwiperGalleryProps> = ({ files }) => {
+const SwiperGallery: FC<TSwiperGalleryProps> = ({ files, className, direction = "horizontal" }) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <>
       <Swiper
+        direction={direction}
         spaceBetween={20}
         pagination={{ clickable: true }}
         modules={[Pagination]}
-        className="h-[300px]"
+        className={"h-[300px]" + (className ? ` ${className}` : "")}
         breakpoints={{
           320: { slidesPerView: 1, spaceBetween: 10 },
           640: { slidesPerView: 2, spaceBetween: 15 },

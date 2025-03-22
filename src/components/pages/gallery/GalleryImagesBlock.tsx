@@ -16,7 +16,7 @@ const GalleryImagesBlock = ({ files }) => {
   return (
     <>
       <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-4 w-full">
-        {files.map(({ src, id }, i) => (
+        {files?.map(({ src, id }, i) => (
           <div key={id} className="relative w-full h-60">
             <Image
               src={src}
@@ -33,7 +33,7 @@ const GalleryImagesBlock = ({ files }) => {
       <Lightbox
         open={open}
         close={() => setOpen(false)}
-        slides={files.map((file) => ({ src: `https://lh3.googleusercontent.com/d/${file.id}` }))}
+        slides={files?.map((file) => ({ src: `https://lh3.googleusercontent.com/d/${file.id}` }))}
         index={index}
       />
     </>

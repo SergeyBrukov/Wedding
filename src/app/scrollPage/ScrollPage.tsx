@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 const ScrollPage = () => {
   const pathname = usePathname();
-  const sectionIds = ["about", "schedule", "gallery", "contact"];
+  const sectionIds = ["about", "schedule", "gallery", "contact", "map"];
 
   useEffect(() => {
     if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
@@ -19,7 +19,7 @@ const ScrollPage = () => {
       });
     };
 
-    handleScroll();
+    // handleScroll();
 
   }, [pathname]);
 

@@ -4,6 +4,7 @@ import Gallery from "@/components/section/gallery/Gallery";
 import Schedule from "@/components/section/schedule/Schedule";
 import Contact from "@/components/section/contact/Contact";
 import galleryService from "@/service/Gallery.service";
+import MapSection from "@/components/section/map/Map";
 
 export default  function Home() {
   const FOLDER_ID = "1MOJtgldHMpqkObPqvqNU6OTDWLP5pALK";
@@ -21,6 +22,8 @@ export default  function Home() {
 
       {/* Розклад */}
       <Schedule />
+
+      <MapSection />
 
       {/* Контактна інформація */}
       <Contact />
