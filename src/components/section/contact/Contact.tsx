@@ -21,18 +21,18 @@ const Contact = () => {
         </p>
 
         <div className="mt-6 flex justify-center gap-6 animate-fade-up delay-400">
-          <a href="https://t.me/yourtelegram" target="_blank" rel="noopener noreferrer"
-             className="text-blue-500 text-3xl hover:text-blue-700">
+          <a href="https://t.me/@syrytviktoriia" target="_blank" rel="noopener noreferrer"
+             className="text-black text-3xl hover:text-blue-700">
             <FaTelegramPlane />
           </a>
-          <a href="viber://chat?number=%2B380123456789" className="text-purple-500 text-3xl hover:text-purple-700">
+          <a href="viber://chat?number=%2B380639984084" className="text-black text-3xl hover:text-purple-700">
             <FaViber />
           </a>
-          <a href="https://www.instagram.com/yourinstagram" target="_blank" rel="noopener noreferrer"
-             className="text-pink-500 text-3xl hover:text-pink-700">
+          <a href="https://www.instagram.com/viktoria_syryt?igsh=ZWk4NzhzaTB1cXdw&utm_source=qr" target="_blank" rel="noopener noreferrer"
+             className="text-black text-3xl hover:text-pink-700">
             <FaInstagram />
           </a>
-          <a href="tel:+380633050921" className="text-green-500 text-3xl hover:text-green-700">
+          <a href="tel:+380639984084" className="text-black text-3xl hover:text-green-700">
             <FaPhoneAlt />
           </a>
         </div>
