@@ -50,26 +50,26 @@ const TimeBlockMainSection = () => {
   return (
     <>
       {timeLeft ? (
-        <div className="mt-10 flex justify-center gap-10 text-xl md:text-6xl font-bold font-avenir">
+        <div className="mt-10 flex justify-center gap-5 md:gap-10 text-xl md:text-6xl font-bold font-avenir">
           <div>
             <p>{timeLeft.days}</p>
-            <p className="text-2xl">день</p>
+            <p className="text-sm md:text-2xl">день</p>
           </div>
           <div>
             <p>{timeLeft.hours}</p>
-            <p className="text-2xl">година</p>
+            <p className="text-sm md:text-2xl">година</p>
           </div>
           <div>
             <p>{timeLeft.minutes}</p>
-            <p className="text-2xl">хвилина</p>
+            <p className="text-sm md:text-2xl">хвилина</p>
           </div>
           <div>
             <p>{timeLeft.seconds}</p>
-            <p className="text-2xl">секунда</p>
+            <p className="text-sm md:text-2xl">секунда</p>
           </div>
         </div>
       ) : (
-        <div className="mt-10 text-2xl font-semibold">
+        <div className="mt-10 text-sm md:text-2xl font-semibold">
           Великий день настав! 🥂
         </div>
       )}
