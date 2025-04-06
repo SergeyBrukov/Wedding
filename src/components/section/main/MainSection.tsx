@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { memo } from "react";
+import TImeBlockMainSection from "@/components/section/main/TImeBlockMainSection";
 
 const MainSection = () => {
 
@@ -28,6 +29,7 @@ const MainSection = () => {
         >
           Долучайтесь до святкування нашого кохання
         </p>
+        <TImeBlockMainSection />
       </div>
     </section>
   );

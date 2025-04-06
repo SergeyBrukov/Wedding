@@ -3,10 +3,11 @@ import { memo, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import headerService from "@/service/Header.service";
+import { TNavMenuItem } from "@/utils/types";
 
 const HeaderNavigationBlock = () => {
   const pathName = usePathname();
-  const [navItems, setNavItems] = useState([]);
+  const [navItems, setNavItems] = useState<TNavMenuItem[]>([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -65,17 +66,17 @@ const HeaderNavigationBlock = () => {
       {/* Мобільне меню */}
       <div className={`w-max md:hidden ${isMenuOpen ? "block absolute mt-1 z-[1000] right-1" : "hidden"}`} id="navbar-default">
         <ul className="font-medium flex flex-col p-4 md:p-0 border border-lightBeige rounded-lg bg-ivory md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent">
-          {navItems.map((item) => {
-            const isHome = item.includes("Home");
+          {navItems.map(({slug, url, title}) => {
+            const isHome = slug.includes("home");
             return (
-              <li key={item}>
+              <li key={slug}>
                 <Link
                   onClick={toggleMenu}
                   replace
-                  href={isHome ? "/" : `#${item.toLowerCase()}`}
+                  href={isHome ? "/" : `#${slug}`}
                   className="block py-2 px-3 text-black rounded-sm hover:bg-paleRose transition-colors duration-300"
                 >
-                  {item}
+                  {title}
                 </Link>
               </li>
             );
@@ -85,16 +86,16 @@ const HeaderNavigationBlock = () => {
 
       {/* Десктопне меню */}
       <ul className="hidden md:flex space-x-6">
-        {navItems.map((item) => {
-          const isHome = item.includes("Home");
+        {navItems.map(({slug, url, title}) => {
+          const isHome = slug.includes("home");
           return (
-            <li key={item} className="animate-slide-in opacity-0 animation-delay-[200ms]">
+            <li key={slug} className="animate-slide-in opacity-0 animation-delay-[200ms]">
               <Link
                 replace
-                href={isHome ? "/" : `#${item.toLowerCase()}`}
+                href={isHome ? "/" : `#${slug}`}
                 className="hover:text-cream transition-colors duration-300"
               >
-                {item}
+                {title}
               </Link>
             </li>
           );

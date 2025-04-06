@@ -1,7 +1,9 @@
-import React, { memo } from "react";
+import React, { memo, use } from "react";
 import Image from "next/image";
+import FooterNavigationBlock from "@/components/footer/FooterNavigationBlock";
 
 const Footer = () => {
+
   return (
     <footer className="bg-gradient-to-r from-white to-ivory px-8 py-4 text-black">
       <div className="max-w-7xl mx-auto flex justify-between items-center max-lg:flex-col max-lg:gap-2">
@@ -22,14 +24,7 @@ const Footer = () => {
             <i className="fab fa-instagram"></i> {/* Приклад іконки Instagram */}
           </a>
         </div>
-
-        <nav>
-          <ul className="flex space-x-6 max-lg:flex-col max-lg:space-x-0 max-lg:gap-2 items-center">
-            <li><a href="#home" className="hover:text-babyPink-300">Home</a></li>
-            <li><a href="#about" className="hover:text-babyPink-300">About</a></li>
-            <li><a href="#contact" className="hover:text-babyPink-300">Contact</a></li>
-          </ul>
-        </nav>
+        <FooterNavigationBlock />
       </div>
     </footer>
   );
