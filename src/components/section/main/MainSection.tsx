@@ -1,9 +1,8 @@
 import Image from "next/image";
 import React, { memo } from "react";
-import TImeBlockMainSection from "@/components/section/main/TImeBlockMainSection";
+import TImeBlockMainSection from "./TImeBlockMainSection";
 
 const MainSection = () => {
-
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center">
       <div className="absolute inset-0">

@@ -1,5 +1,5 @@
 "use client";
-import React, { memo, useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { useTimerDateEvent } from "@/hooks/useTimerDateEvent";
 import { Fireworks } from "fireworks-js";
 
@@ -46,6 +46,35 @@ const TimeBlockMainSection = () => {
       };
     }
   }, [timeLeft]);
+
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    setIsReady(true);
+  }, []);
+
+  if (!isReady) {
+    return (
+      <div className="mt-10 flex justify-center gap-5 md:gap-10 text-xl md:text-6xl font-bold font-avenir">
+        <div>
+          <p>...</p>
+          <p className="text-sm md:text-2xl">день</p>
+        </div>
+        <div>
+          <p>...</p>
+          <p className="text-sm md:text-2xl">година</p>
+        </div>
+        <div>
+          <p>...</p>
+          <p className="text-sm md:text-2xl">хвилина</p>
+        </div>
+        <div>
+          <p>...</p>
+          <p className="text-sm md:text-2xl">секунда</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <>

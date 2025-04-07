@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import MainSection from "@/components/section/main/MainSection";
 import React from "react";
 import ScrollPage from "@/app/scrollPage/ScrollPage";
+import { ToastContainer } from "react-toastify";
 // import localFont from "next/font/local";
 
 // const shelleyScript = localFont({
@@ -45,6 +46,7 @@ export default function RootLayout({
       {children}
     </main>
     <Footer />
+    <ToastContainer />
     </body>
     </html>
   );
