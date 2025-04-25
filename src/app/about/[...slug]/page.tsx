@@ -5,6 +5,14 @@ type AboutSomePageProps = {
   params: { slug: string };
 };
 
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return [
+    { slug: ["proposal"] },
+    { slug: ["firstMeeting"] },
+  ];
+}
+
 const AboutSomePage: FC<AboutSomePageProps> = async ({ params }) => {
   const { slug } = params;
   const data = await aboutService.API_METHODS.getAbout(slug);

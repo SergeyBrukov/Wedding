@@ -13,7 +13,6 @@ class AboutService {
             revalidate: 10,
           }
         });
-        console.log("response>>", response);
 
         const data = await response.json();
 

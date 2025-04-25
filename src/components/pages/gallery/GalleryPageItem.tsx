@@ -18,24 +18,24 @@ type TGalleryPageItemProps = {
   notificationDisableText?: string;
 }
 
-const GalleryPageItem:FC<TGalleryPageItemProps> = ({
-  href,
-  className,
-  imageSrc,
-  imageAlt,
-  title,
-  imageWidth= 500,
-  imageHeight= 300,
-  isHandleClick = false,
-  isDisabled = false,
-  notificationDisableText
+const GalleryPageItem: FC<TGalleryPageItemProps> = ({
+                                                      href,
+                                                      className,
+                                                      imageSrc,
+                                                      imageAlt,
+                                                      title,
+                                                      imageWidth = 500,
+                                                      imageHeight = 300,
+                                                      isHandleClick = false,
+                                                      isDisabled = false,
+                                                      notificationDisableText,
 
-                                                   }) => {
+                                                    }) => {
 
   const handleClick = useCallback(() => {
     if (isDisabled) {
       if (notificationDisableText) {
-        notify(notificationDisableText, EToastify.INFO)
+        notify(notificationDisableText, EToastify.INFO);
       }
       return;
     }
@@ -59,6 +59,6 @@ const GalleryPageItem:FC<TGalleryPageItemProps> = ({
       </div>
     </Link>
   );
-}
+};
 
 export default memo(GalleryPageItem);

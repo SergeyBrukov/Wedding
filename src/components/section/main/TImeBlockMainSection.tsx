@@ -4,7 +4,7 @@ import { useTimerDateEvent } from "@/hooks/useTimerDateEvent";
 import { Fireworks } from "fireworks-js";
 
 const TimeBlockMainSection = () => {
-  const { timeLeft } = useTimerDateEvent(new Date("2025-09-23T00:00:00"));
+  const { timeLeft } = useTimerDateEvent(new Date("2025-08-23T00:00:00"));
   const fireworksRef = useRef<HTMLDivElement>(null);
   const instanceRef = useRef<any>(null);
 

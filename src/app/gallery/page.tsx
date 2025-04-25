@@ -22,33 +22,13 @@ const GalleryPage = () => {
           isHandleClick
           notificationDisableText="Ця функція поки що недоступна"
         />
-        {/*<Link href="/gallery/our-photos" className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">*/}
-        {/*  <Image*/}
-        {/*    src="/images/our-photos.jpg"*/}
-        {/*    width={500}*/}
-        {/*    height={300}*/}
-        {/*    objectFit="cover"*/}
-        {/*    alt="Наші фото"*/}
-        {/*    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"*/}
-        {/*  />*/}
-        {/*  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">*/}
-        {/*    <h3 className="text-white text-2xl font-bold">Наші фото</h3>*/}
-        {/*  </div>*/}
-        {/*</Link>*/}
 
-        {/*<Link href="/gallery/wedding-photos" className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">*/}
-        {/*  <Image*/}
-        {/*    src="/images/wedding-photos.jpg"*/}
-        {/*    width={500}*/}
-        {/*    height={300}*/}
-        {/*    objectFit="cover"*/}
-        {/*    alt="Весільні фото"*/}
-        {/*    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"*/}
-        {/*  />*/}
-        {/*  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">*/}
-        {/*    <h3 className="text-white text-2xl font-bold">Весільні фото</h3>*/}
-        {/*  </div>*/}
-        {/*</Link>*/}
+        {/*<GalleryPageItem*/}
+        {/*  href="/gallery/photos-of-guests"*/}
+        {/*  imageSrc="/images/our-photos.jpg"*/}
+        {/*  imageAlt="Фото з дня весілля"*/}
+        {/*  title="Фото з дня весілля"*/}
+        {/*/>*/}
       </div>
     </section>
   );

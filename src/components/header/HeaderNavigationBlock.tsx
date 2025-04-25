@@ -23,7 +23,6 @@ const HeaderNavigationBlock = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      console.log("Click outside", event.target);
       if (isMenuOpen && !event.target.closest("#navbar-toggle")) {
         setIsMenuOpen(false);
       }

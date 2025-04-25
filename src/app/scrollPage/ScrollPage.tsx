@@ -2,6 +2,8 @@
 import { memo, useEffect, useLayoutEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
+const pathnameWithOutScrollToTop = ["gallery/add-photos-of-guasts"];
+
 const ScrollPage = () => {
   const pathname = usePathname();
   const sectionIds = ["about", "schedule", "gallery", "contact", "map"];
@@ -12,7 +14,10 @@ const ScrollPage = () => {
     }
 
     const handleScroll = () => {
-      console.log("Scroll to top");
+      if (pathnameWithOutScrollToTop.some((path) => pathname.includes(path))) {
+        return;
+      }
+
       window.scrollTo({
         top: 0,
         behavior: "instant",
