@@ -9,12 +9,12 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   return [
     { slug: ["proposal"] },
-    { slug: ["firstMeeting"] },
+    { slug: ["first-meeting"] },
   ];
 }
 
 const AboutSomePage: FC<AboutSomePageProps> = async ({ params }) => {
-  const { slug } = params;
+  const { slug } = await params;
   const data = await aboutService.API_METHODS.getAbout(slug);
 
   if (!data) {
