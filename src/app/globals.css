@@ -5,8 +5,6 @@
 :root {
   --background: #FCF9F7;
   --foreground: #ededed;
-  --font-avenir: 'Urbanist', sans-serif;
-  --font-great-vibes: 'Great Vibes', cursive;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,5 +22,4 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-avenir), sans-serif;
 }

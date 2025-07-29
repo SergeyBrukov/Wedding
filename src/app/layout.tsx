@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body
-      className={`${avenir.className} ${greatVibes.className} antialiased flex flex-col min-h-screen`}
+      className={`${avenir.variable} ${greatVibes.variable} antialiased flex flex-col min-h-screen`}
     >
     <ScrollPage />
     <Header />

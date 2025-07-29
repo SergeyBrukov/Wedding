@@ -6,7 +6,7 @@ const pathnameWithOutScrollToTop = ["gallery/add-photos-of-guasts"];
 
 const ScrollPage = () => {
   const pathname = usePathname();
-  const sectionIds = ["about", "schedule", "gallery", "contact", "map"];
+  const sectionIds = ["about", "schedule", "gallery", "contact", "map", "gifts"];
 
   useEffect(() => {
     if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
