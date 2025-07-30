@@ -17,7 +17,7 @@ const MainSection = () => {
       </div>
 
       <div
-        className="relative text-center text-white z-10"
+        className="relative text-center text-white z-1"
       >
         <h1
           className="text-4xl md:text-6xl md:leading-[1.5] font-bold font-greatVibes overflow-hidden animate-typing whitespace-nowrap letter-spacing-wide">Наш
